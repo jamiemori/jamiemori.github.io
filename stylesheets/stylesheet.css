@@ -48,13 +48,6 @@ table {
 Theme Styles
 *******************************************************************************/
 
-/* Menu */ 
-
-menu {
-  float: right;
-  list-style: none;
-  margin-top: 15px;
-
 body {
   box-sizing: border-box;
   color:#373737;
