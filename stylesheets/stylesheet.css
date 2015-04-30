@@ -54,17 +54,6 @@ menu {
   float: right;
   list-style: none;
   margin-top: 15px;
-}
-
-menu {
-  display: inline;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-menu {
-  color: #898989;
-}
 
 body {
   box-sizing: border-box;
