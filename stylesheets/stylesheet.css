@@ -368,6 +368,14 @@ Full-Width Styles
   background: #212121;
 }
 
+#nav {
+  display: block;
+  width: 100%;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 
 /*******************************************************************************
