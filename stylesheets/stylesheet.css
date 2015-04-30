@@ -48,6 +48,15 @@ table {
 Theme Styles
 *******************************************************************************/
 
+.clearfix:after {
+  content: "\00A0";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
 body {
   box-sizing: border-box;
   color:#373737;
