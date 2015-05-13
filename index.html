@@ -1,61 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Jamie Mori : ">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>Jamie Mori</title>
-  </head>
-  <body>
+---
+layout: page
+title: Archived Articles
+excerpt: "A simple and clean responsive Jekyll theme for words and photos."
+search_omit: true
+---
 
-  <!--HEADER LINKS -->
-  <div id="nav_wrap" class="outer">
-    <ul id="nav" class="clearfix">
-      <li>
-        <a href="/">About</a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- HEADER -->
-  <div id="header_wrap" class="outer">
-      <header class="inner">
-        <a id="forkme_banner" href="https://github.com/jamiemori">View on GitHub</a>
-        <h1 id="project_title">Jamie Mori</h1>
-      </header>
-  </div>
-  
-
-  <!-- MAIN CONTENT -->
-  <div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
-      <article>
-        <header>
-          <h1 class="entry-title">
-            <a href="/">
-              How To Install JUCE
-            </a>
-          </h1>
-          <p class="meta">
-            <time datetime="2015-04-03" pubdate data-updated="true">April 30<span>rd</span>, 2015</time>
-          </p>
-        </header>
-        <div class="entry-content">
-          <p></p>
-        </div>
-      </article>
-    </section>
-  </div>
-
-  <!-- FOOTER  -->
-  <div id="footer_wrap" class="outer">
-    <footer class="inner">
-      <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-    </footer>
-  </div>
-
-    
-
-  </body>
-</html>
+<ul class="post-list">
+{% for post in site.posts limit:10 %} 
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt }}</span>{% endif %}</a></article></li>
+{% endfor %}
+</ul>
