@@ -10,13 +10,13 @@ share: true
 
 Writing a software synth or effects processor is a formidable task for beginners because it requires knowledge in many areas:
 
-* <strong>Programming</strong>: As far as I know, most commercial plug-ins are written in C/C++. Of course, you can always write plug-ins in other languages such as Python, Java(Script) etc. If you want to create a full-fledged commercial class VST, you may need to familiarize yourself with several programming libraries, APIs, and markup languages.
+* <strong>Programming</strong>: As far as I know, most commercial plugins are written in C/C++. Of course, you can always write plugins in other languages such as Python, Java(Script) etc. If you want to create a full-fledged commercial class VST, you may need to familiarize yourself with several programming libraries, APIs, and markup languages.
 
 * <strong>DSP</strong>: Even if you know how to code, you cannot write an audio plugin without some understanding of digital signal processing (DSP). Software plugins inherently deal with digital signals, thus DSP is essential. Knowledge of signals in the analog domain may also be required for writing analog modeled software.
 
 * <strong>Math</strong>: If you are writing something elaborate, the math can get pretty gnarly. Doesn't hurt to know some complex analysis, linear algebra, calculus, differential equations, and so on.
 
-* <strong>Music</strong>: Developing a good audio plug-in isn't all technical. It is after all, going to be used by musicians, producers, and engineers with various backgrounds and skill sets. Music theory as well as practical musical skills will always come in handy.
+* <strong>Music</strong>: Developing a good audio plugin isn't all technical. It is after all, going to be used by musicians, producers, and engineers with various backgrounds and skill sets. Music theory as well as practical musical skills will always come in handy.
 
 * <strong>Design</strong>: Finally, a great software synth can be ruined by a horrible graphical user interface (GUI). You want it to be simultaneously pleasing to the eye and easy to use without sacrificing functionality. Achieving a good balance is key.
 
@@ -50,7 +50,7 @@ One more thing. Not surprisingly, there are other great ways to create audio plu
 
 So you've decided to go down the rabbit hole. Here are some things which I hope you get out of this tutorial. 
 
-* A fully functional VST software synth plug-in written in C++ that will work in a DAW that supports VST plug-ins.
+* A fully functional VST software synth plugin written in C++ that will work in a DAW that supports VST plugins.
 
 * A deeper understanding of "what's under the hood" e.g., what's actually happening when you turn that decay knob.
 
@@ -60,7 +60,7 @@ So you've decided to go down the rabbit hole. Here are some things which I hope 
 
 There's 3 things we need to install before we can start to program.
 
-1.[Steinberg SDK](http://www.steinberg.net/en/company/developers.html) (get the audio VST plug-in SDK). I put the SDK files in a folder at C:/VST3 SDK. 
+1.[Steinberg SDK](http://www.steinberg.net/en/company/developers.html) (get the audio VST plugin SDK). I put the SDK files in a folder at C:/VST3 SDK. 
 
 <figure>
   <!-- <a href="/images/vstsdk.png"> -->
@@ -109,7 +109,7 @@ You'll be slided over to a second window (not shown). Here, fill in the <strong>
   </caption>
 </figure>
 
-For this tutorial, many of the parameters in the project settings can be left blank. I filled in the <strong>Project Name</strong>, <strong>Project Version</strong>, <strong>Plugin Code</strong>, and deleted most everything else. Specify the <strong> Project Type</strong> as an Audio Plug-in. We will only be building a VST. <strong> Plugin Channel Configuration </strong> can be left as {1,1,}, {2,2,} (1 in 1 out, 2 in 2out). This plugin <strong>is a synth</strong>, <strong>wants midi input</strong>, and <strong>silence in should produce silence out</strong>. Include the binary data file in the appconfig.h file.
+For this tutorial, many of the parameters in the project settings can be left blank. I filled in the <strong>Project Name</strong>, <strong>Project Version</strong>, <strong>Plugin Code</strong>, and deleted most everything else. Specify the <strong> Project Type</strong> as an Audio plugin. We will only be building a VST. <strong> Plugin Channel Configuration </strong> can be left as {1,1,}, {2,2,} (1 in 1 out, 2 in 2out). This plugin <strong>is a synth</strong>, <strong>wants midi input</strong>, and <strong>silence in should produce silence out</strong>. Include the binary data file in the appconfig.h file.
 
 Let's shift our attention to the tabs on the left. For this tutorial, we can get away without touching the <strong> Modules </strong> tab. In short, the modules tab allows us to specify what modules we want to use in our project. We certainly won't be needing all the modules for our simple synth and at this point in the tutorial, we really don't need to be optimizing our modules setup, so it's best that we leave this section as is. The tab below modules is the <strong>  Visual Studio 2013 </strong> tab. There's generally not much to do here either, however a crucial entry is the <strong> VST Folder</strong>, which specifies where JUCE/visual studio will look for the VST SDK files. Remember where you put the SDK files? (I put mine in C:/VST3 SDK)
 
@@ -119,7 +119,7 @@ Let's shift our attention to the tabs on the left. For this tutorial, we can get
   </a>
 </figure>
 
-Finally, go to <strong> Debug </strong>. It should look something like this. If you plan on building a 64-bit VST plug-in, modify <strong> Architecture </strong> to x64. Otherwise, leave it as 32-bit.
+Finally, go to <strong> Debug </strong>. It should look something like this. If you plan on building a 64-bit VST plugin, modify <strong> Architecture </strong> to x64. Otherwise, leave it as 32-bit.
 
 <figure>
   <!-- <a href="/images/visualstudio.png"> -->
@@ -135,7 +135,7 @@ After you've entered all the relevant information, click on the <strong>Save Pro
   </a>
 </figure>
 
-When visual studio finishes loading all the files, right click on the solution file (mine says Your First Audio Plugin) and click <strong>Build</strong>, which should then run the visual studio compiler. You should get several warning messages; ignore them. If the compiler didn't find any errors in the code (it shouldn't), then you will get a message that states, "Build: 1 succeeded." Hurray! You just built your first VST plug-in! Open your favorite DAW and check it out. If you're using Ableton, you need to rescan the project file in which the .dll file is located. If done correctly, you should be able to launch the VST in your DAW just like any other VST. You should see the words "Hello World!" in black, centered inside the window with a white background.
+When visual studio finishes loading all the files, right click on the solution file (mine says Your First Audio Plugin) and click <strong>Build</strong>, which should then run the visual studio compiler. You should get several warning messages; ignore them. If the compiler didn't find any errors in the code (it shouldn't), then you will get a message that states, "Build: 1 succeeded." Hurray! You just built your first VST plugin! Open your favorite DAW and check it out. If you're using Ableton, you need to rescan the project file in which the .dll file is located. If done correctly, you should be able to launch the VST in your DAW just like any other VST. You should see the words "Hello World!" in black, centered inside the window with a white background.
 
 <figure>
   <!-- <a href="/images/visualstudio.png"> -->
