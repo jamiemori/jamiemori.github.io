@@ -31,7 +31,7 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Taro Naoi
+  name: Jamie Mori
   avatar: bio-photo.jpg
   email: taronaoi@gmail.com
   disqus-shortname: theforestofmusic
