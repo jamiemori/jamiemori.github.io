@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 1
 excerpt: "Package installation and setup"
 modified: 2013-05-03

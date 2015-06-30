@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 2
 excerpt: "Creating a simple volume knob"
 categories: articles
