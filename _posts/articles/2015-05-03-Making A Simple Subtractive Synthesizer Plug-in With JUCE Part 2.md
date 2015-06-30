@@ -4,7 +4,7 @@ title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 2
 excerpt: "Creating a simple volume knob"
 categories: articles
 tags: [sample-post, code, highlighting]
-modified: 2013-05-04
+modified: 2015-06-30
 comments: true
 share: true
 ---
