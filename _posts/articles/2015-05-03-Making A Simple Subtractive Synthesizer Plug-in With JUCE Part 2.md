@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 2
+title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 2.1
 excerpt: "Creating a simple volume knob"
 categories: articles
 modified: 2015-06-30
