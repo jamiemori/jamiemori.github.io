@@ -8,7 +8,7 @@ comments: true
 share: true
 ---
 
-Last time we installed all the packages and did some initial setup so that we can start writing our code. In this tutorial we're going to familiarize ourselves with JUCE's workflow and create a simple VST volume knob.  
+Last time we installed all the packages and did some initial setup so that we can start writing our code. In this tutorial we're going to familiarize ourselves with JUCE's workflow and begin working on a simple VST volume knob.  
 
 # The volume knob
 
