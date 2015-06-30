@@ -302,7 +302,7 @@ g.setFont (15.0f);
 g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
 {%endhighlight%}
 
-Then implement our slider in our constructor. The constructor is a special member function of a class that is executed whenever we create new objects of that class and has the exact same name as the class. The constuctor can be used to initialize the the values within our class. 
+Then implement our slider in our constructor. The constructor is a special member function of a class that is executed whenever we create new objects of that class. You can tell something is a constructor since it has the exact same name as the class. Here, we use the constructor to initialize the the values within our class. 
 
 {% highlight C++%}
 NeuroAudioProcessorEditor::NeuroAudioProcessorEditor (NeuroAudioProcessor& p)
