@@ -12,10 +12,9 @@ Last time we installed all the packages and did some initial setup so that we ca
 
 # The volume knob
 
-Click on the <strong>Files</strong> tab next to the <strong>Config</strong> tab. You will see the source folder, which is the folder that contains all your code. For the case of audio plugins, JUCE automatically creates four files for you. The <strong>PluginProcessor</strong> files (.cpp and .h) mainly contains code that handles the audio processing of the VST, e.g. midi input output and signal processing. The other two files -- <strong>PluginEditor</strong>.cpp and .h -- is code mainly for the graphical user interface (GUI). This configuration isn't set in stone and can be changed in the future. In this tutorial, I'll stick to this general framework, but if you're a more advanced coder, feel free to change things around as you see fit.
+Click on the <strong>Files</strong> tab next to the <strong>Config</strong> tab. You will see the source folder, which is the folder that contains all your code. For the case of audio plugins, JUCE automatically creates four files for you. The <strong>PluginProcessor</strong> files (.cpp and .h) mainly contains code that handles the audio processing of the VST, e.g. midi input/output and signal processing. The other two files -- <strong>PluginEditor</strong>.cpp and .h -- is code mainly for the graphical user interface (GUI). This configuration isn't set in stone and can be changed in the future. In this tutorial, I'll stick to this general framework, but if you're a more advanced coder, feel free to change things around as you see fit.
 
-Before we start constructing our code we first have to think to ourselves, what exactly happens when you turn the volume know in a VST? I've decomposed the general signal flow as an illustration in the picture below (Figure 2.1).
-
+Before we start constructing our code we first have to think to ourselves, what exactly happens when you turn the volume know in a VST. I've decomposed the general signal flow as an illustration in the picture below.
 <figure>
 <image src="/images/flow_volumeknob.png" alt="image">
 </image>
@@ -25,7 +24,7 @@ Not too complicated right? But before we worry about how the knob reacts to user
 
 # Step 1: Drawing the knob
 
-To create the knob, there's two things we can do in JUCE. The first option is to use the provided JUCE GUI editor. The GUI editor gives the you a visual platform to create and modify the components of your VST. JUCE will then automatically generate the code for you. This is not the option we're going to take in this tutorial. We're actually going to take the second option, which is to code everything ourselves, by hand. Why? Because I think programming the volume knob is a fairly easy thing to conceptualize and program, therefore it's a good way to gain a better understanding how our code translates into visual objects. Furthermore, the knowledge you learn here can be extended to program other components of the synth.
+To create the knob, there's two things we can do in JUCE. The first option is to use the provided JUCE GUI editor. The GUI editor gives the you a visual platform to create and modify the components of your VST. JUCE will then automatically generate the code for you. This is not the option we're going to take in this tutorial. We're actually going to take the second option, which is to code everything ourselves, by hand. Why? Because I think programming the volume knob is a fairly easy thing to conceptualize and execute, thus it's a good opportunity to gain a better understanding how our code translates into visual objects.
 
 Okay, without further ado, let's create our volume knob. If you go to the <strong>PluginEditor.cpp</strong> file, you should see the following auto-generated code.
 
@@ -89,20 +88,17 @@ The unfortunate reality of audio plugin programming is that you need to know a b
 The first concept I'm going to introduce are <strong>classes</strong>. According to [Wikipedia](http://en.wikipedia.org/wiki/C%2B%2B_classes): 
 
 <blockquote>
-A class is a user defined type or data structure declared with keyword class that has data and functions (also called methods) as its members whose access is governed by the three access specifiers private, protected or public (by default access to members of a class is private)
-e). 
+A class is a user defined type or data structure declared with keyword class that has data and functions (also called methods) as its members whose access is governed by the three access specifiers private, protected or public (by default access to members of a class is private).
 </blockquote>
 
-Okay, the definition through out a bunch of words at us. Let's just focus on these: <strong>a class has data and functions (also called methods) as its members.</strong> To make things easier, I'm going to use a metaphor to illustrate these concepts. Say we have a dog (Figure 2.2). If we were to deconstruct the characteristics of a dog, what would it be like? Common attributes of dogs include 2 eyes, 1 nose, 1 mouth, 1 tail, some kind of coat (fur) etc. Dogs also exhibit certain behaviors that  make them distinctly "dog-like," such as barking, knowing how to sit on command, and eating.
+Okay, the definition through out a bunch of words at us. Let's just focus on these: <strong>a class has data and functions (also called methods) as its members.</strong> To make things easier, I'm going to use a metaphor to illustrate these concepts. Say we have a dog (image below). If we were to deconstruct the characteristics of a dog, what would it be like? Common attributes of dogs include 2 eyes, 1 nose, 1 mouth, 1 tail, some kind of coat (fur) etc. Dogs also exhibit certain behaviors that  make them distinctly "dog-like," such as barking, knowing how to sit on command, and eating.
 
-<figure<image src="/images/class_dog.png" alt="image">
+<figure>
+<image src="/images/class_dog.png" alt="image">
 </image>
-<caption>
-Figure 2.2: Class dog 
-</caption>
 </figure>
 
-If we abstract out these attributes and behaviors that characterizes a dog into code, we get something like what we see contained in the bubble on the right (Figure 2.2). I'll rewrite the code a little cleaner in Figure 2.3. Now, we have the <strong>variables</strong> (data) and functions (methods) that we need to describe the dog. The variables should be straightforward to understand. In code, we declare that eyes is equal to 2, whereas nose is equal to 1. The semicolon at the end of each declaration is important to C++ and is called a <strong>punctuator</strong>. It basically tells the computer when the statement you wrote should end. Make sure to include them when you're declaring variables. The <strong>int</strong> in front of each variable specifies the <strong>type</strong> of the variable. Int as you may have guessed, is short for <strong>integer</strong>. There are multiple fundamental data types in C++ (as in many other languages). You don't need to master them all now, just know that they exist and that they are important. 
+If we abstract out these attributes and behaviors that characterizes a dog into code, we get something like what we see contained in the bubble on the right. I'll rewrite the code a little cleaner below. Now, we have the <strong>variables</strong> (data) and <strong>functions</strong> (methods) that we need to describe the dog. The variables should be straightforward to understand. In code, we declare that eyes is equal to 2, whereas nose is equal to 1. The semicolon at the end of each declaration is important to C++ and is called a <strong>punctuator</strong>. It basically tells the computer when the statement you wrote should end. Make sure to include them when you're declaring variables. The <strong>int</strong> in front of each variable specifies the <strong>type</strong> of the variable. Int as you may have guessed, is short for <strong>integer</strong>. There are multiple fundamental data types in C++ (as in many other languages). You don't need to master them all now, just know that they exist and that they are important. 
 
 <figure>
 {% highlight C++ %}
@@ -121,14 +117,11 @@ float eatFood (float food)
 }
 {% endhighlight %}
 
-<caption>
-Figure 2.3: holy god!
-</caption>
 </figure>
 
 #### Functions 
 
-Functions may be a little harder to grasp if you have little coding experience. To put it briefly, a function takes something in, does something to whatever it takes in, and spits something out. Shift your attention to Figure X. I've drawn out the "eatFood" function that I showed you in Figure X. There are three components to a function: the function declaration, function body, and function output. The function declaration is kind of like the summary of the function's purpose. For function eatFood, the function declaration is <strong>float eatFood (float food)</strong>. It consists of <strong>eatFood</strong> -- name of our function -- <strong>(float food)</strong> -- the input type and name the function takes in -- and the <strong>return type</strong> -- float. 
+Functions may be a little harder to grasp if you have little coding experience. To put it briefly, a function takes something in, does something to whatever it takes in, and spits something out. Shift your attention to the pooping dog in the figure below. I've drawn out the "eatFood" function that I showed you in the preceding code snippet. There are three components to a function: the function declaration, function body, and function output. The function declaration is kind of like the summary of the function's purpose. For function eatFood, the function declaration is <strong>float eatFood (float food)</strong>. It consists of <strong>eatFood</strong>, the name of our function, <strong>(float food)</strong>, the input type and name the function takes in, and the <strong>return type</strong>, float. 
 
 <figure>
 <image src ="/images/dog_functions.png" alt="image">
@@ -138,7 +131,7 @@ Functions may be a little harder to grasp if you have little coding experience. 
 The function body is where it does something to the input. In the function body, we declare a <strong>float</strong> (another data type that handles numbers with decimals) called poop. We set the poop equal to food/2.0, which is equivalent to saying 12.0 divided by 6.0, since in the drawing food is equal to 12.0 (I chose 12.0 for the sake of illustration, but food can really be any value that is a float). We then, specify our return value as poop (our function <strong>output</strong>). Recall that we declared the function return type to be <strong>float</strong> so the return value of poop must be a float. There are cases where the function doesn't return anything specifically, in which case we would say <strong>void</strong> instead of float in the function declaration. Also, don't forget to put semicolons at the end of each line and to bracket the function body if you don't want errors!
 <p></p>
 
-Okay, that was a lot. But we're actually pretty close to constructing a real class. We're just missing a couple things. First, we have to declare that it actually is a class called <em>dog</em> by bracketing (note the semicolon at the end) and declaring <strong>class dog</strong>. Next, we are going to provide some <strong>Access Specifiers</strong>. These are actually not required, but it's good to provide them anyways. Anything specified as <strong>private</strong> means that only the dog class has access to these variables/functions. Anything that is <strong>public</strong> can be accessed by everybody. By default, all classes in C++ are <strong>private</strong> so remember that. Finally, we need to specify that the "eatFood" function belongs to the dog class. We do this by including the "<strong>::</strong>" operator, known as the <strong>scope resolution operator</strong> preceded by the class name "dog" in the function declaration. 
+Okay, that was a lot. But we're actually pretty close to constructing a real class. We're just missing a couple things. First, we have to declare that it actually is a class called <em>dog</em> by bracketing (note the semicolon at the end) and declaring <strong>class dog</strong>. Next, we are going to provide some <strong>Access Specifiers</strong>. Anything specified as <strong>private</strong> means that only the dog class has access to these variables/functions. Anything that is <strong>public</strong> can be accessed by everybody. By default, all classes in C++ are <strong>private</strong>. Finally, we need to specify that the "eatFood" function belongs to the dog class. We do this by including the "<strong>::</strong>" operator, known as the <strong>scope resolution operator</strong> preceded by the class name "dog" in the function declaration. 
 
 <figure>
 {% highlight C++ %}
@@ -162,16 +155,13 @@ float dog::eatFood (float food)
 }
 {% endhighlight %}
 
-<caption>
-Figure 2.3: Code for class dog.
-</caption>
 </figure>
 
-And there you go, you've got a class! Let's go back to <strong>PluginEditor.cpp</strong> and see if we can understand it now. Take a look at the following code snipped from PluginEditor.cpp. Do you recognize anything? The first line says <strong>void AsdfAudioProcessorEditor::paint (Graphics& g)</strong>. If we compare this with the function <strong>float dog::eatFood (float food)</strong> from the dog class, we notice that syntactically they're very similar. Why? Because void AsdfAudioProcessorEditor::paint (Graphics& g) is a function called "paint" of class "AsdfAudioProcessorEditor." It has no specific return type so it has a void preceding the class definition and the function takes in something called "Graphics& g." It also has a function body with a several things in it. More on that later. 
+And there you go, you've got a class! Let's go back to <strong>PluginEditor.cpp</strong> and see if we can understand it now. Take a look at the following code snipped from PluginEditor.cpp. Do you recognize anything? The first line says <strong>void NeuroAudioProcessorEditor::paint (Graphics& g)</strong>. If we compare this with the function <strong>float dog::eatFood (float food)</strong> from the dog class, we notice that syntactically they're very similar. Why? Because void NeuroAudioProcessorEditor::paint (Graphics& g) is a function called "paint" of class "NeuroAudioProcessorEditor." It has no specific return type so it has a void preceding the class definition and the function takes in something called "Graphics& g." It also has a function body with a several things in it. More on that later. 
 
 {% highlight C++ %}
 
-void AsdfAudioProcessorEditor::paint (Graphics& g)
+void NeuroAudioProcessorEditor::paint (Graphics& g)
 {
     g.fillAll (Colours::white);
 
@@ -187,7 +177,7 @@ I hear some of you saying, "hey wait, where is the class declaration?" In the do
 
 #### Cpp and h Files 
 
-It turns out that the introjucer has split up the class into two files, so the actual class declaration is contained in <strong>PluginEditor.h</strong> (Figure XX). Here you will see the familiar access specifiers, the class methods, and variables. 
+It turns out that the introjucer has split up the class into two files, so the actual class declaration is contained in <strong>PluginEditor.h</strong>. Here you will see the familiar access specifiers, the class methods, and variables. 
 
 {% highlight C++ %}
 /*
@@ -234,7 +224,7 @@ private:
 
 {% endhighlight %}
 
-It is common practice to separate the cpp and header files, which I illustrate in Figure (XW). Why? For this tutorial, you don't really need to know the gory details (for more detail you can check out for e.g. [here](http://stackoverflow.com/questions/333889/why-have-header-files-and-cpp-files-in-c)). What you <em>do</em> need to know is that whenever you split something into a .h and .cpp file, they need to "talk" to each other. You do this by putting <strong>#include header_name.h</strong> at the top of the .cpp file, as you can see in PluginEditor.cpp. This way, the compiler remembers to copy and paste content of the .h file into .cpp during compilation. It is also a good rule of thumb to write the function declarations in the .cpp files, while you declare variables and functions in the header file. 
+It is common practice to separate the cpp and header files. Why? For this tutorial, you don't really need to know the gory details (for more detail you can check out for e.g. [here](http://stackoverflow.com/questions/333889/why-have-header-files-and-cpp-files-in-c)). What you <em>do</em> need to know is that whenever you split something into a .h and .cpp file, they need to "talk" to each other. You do this by putting <strong>#include header_name.h</strong> at the top of the .cpp file, as you can see in PluginEditor.cpp. This way, the compiler remembers to copy and paste content of the .h file into .cpp during compilation. It is also a good rule of thumb to write the function declarations in the .cpp files, while you declare variables and functions in the header file. 
 <figure>
 <image src="/images/dog_cppandh.png" alt="images">
 </image>
@@ -242,14 +232,14 @@ It is common practice to separate the cpp and header files, which I illustrate i
 
 #### Inheritance 
 
-One, last, thing. We have to talk about inheritance. Not the kind of inheritance where you get money from your deceased grandfather so that you can screw around and travel the world, but <strong>class inheritance</strong>. By using the concept of inheritance we can create completely new classes (derived classes), while still retaining the characteristics of the original class (base class). For instance, imagine that we have a base class called "class dog." We can derive new classes such as "green dog," "small lavender dog," and "Clifford" simply by inheriting fro the base dog class. Each derived class will have features that are common to the derived class e.g. have 2 eyes, 1 nose, 1 tail etc.   
+One, last, thing. We have to talk about <strong>class inheritance</strong>. By using the concept of inheritance we can create completely new classes (derived classes), while still retaining the characteristics of the original class (base class). For instance, imagine that we have a base class called "class dog." We can derive new classes such as "green dog," "small lavender dog," and "Clifford" simply by inheriting from the base dog class. Each derived class will have features that are common to the derived class e.g. have 2 eyes, 1 nose, 1 tail etc.   
 
 <figure>
 <image src="/images/dog_inheritance.png" alt="images">
 </image>
 </figure>
 
-In C++ syntax, we write it in the following way. Our new class "AsdfAudioProcessorEditor" is inheriting from the AudioProcessorEditor class. 
+In C++ syntax, we write it in the following way. Our new class "NeuroAudioProcessorEditor" is inheriting from the AudioProcessorEditor class. 
 
 {% highlight C++ %}
 
@@ -257,11 +247,15 @@ class NeuroAudioProcessorEditor  : public AudioProcessorEditor
 
 {% endhighlight %}
 
-Holy hell we're done for this part! Take a break by listening to some [Star Guitar by the Chemical Bros.](https://www.youtube.com/watch?v=0S43IwBF0uM)
+<p>
+<strong>---End explanation of C++ concepts---</strong>
+</p>
 
-We now have the tools to create our volume knob. 
+That was pretty long. Let's take a break by listening to some [Star Guitar by the Chemical Bros.](https://www.youtube.com/watch?v=0S43IwBF0uM)
 
-Start by gouing to the PluginEditor.h file. We're going to add an instance of a Slider class by adding the line 
+Okay, we're now equipped with some basic C++ knowledge to create our volume knob. 
+
+Start by going to the PluginEditor.h file. We're going to add an instance (t.e. create our slider object) of a Slider class by adding the line 
 {%highlight C++ %}
 Slider sliderVolume; 
 {%endhighlight %}
@@ -301,7 +295,7 @@ g.setFont (15.0f);
 g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
 {%endhighlight%}
 
-Then implement our slider in our constructor. The constructor is a special member function of a class that is executed whenever we create new objects of that class. You can tell something is a constructor since it has the exact same name as the class. Here, we use the constructor to initialize the the values within our class. 
+Then implement our slider in our constructor. The constructor is a special member function of a class that is executed whenever we create new objects of that class. You can tell something is a constructor since it has the exact same name as the class. Here, we use the constructor to initialize the values within our class. 
 
 {% highlight C++%}
 NeuroAudioProcessorEditor::NeuroAudioProcessorEditor (NeuroAudioProcessor& p)
@@ -334,14 +328,14 @@ NeuroAudioProcessorEditor::~NeuroAudioProcessorEditor()
 }
 {%endhighlight%}
 
-What we've done here is the following. We first set the size of our parent component window and within the parent window, we've implemented a volume slider. I have to note that Juce has a specific coordinate system that must be followed. In our current layout the origin (0,0) is located at the top left corner of our parent window, where the positive direction in y is down, while positive x is right. The function <strong>sliderVolume.setSize(200, 200)</strong> is setting h<sub>p</sub> and w<sub>p</sub>, the size of our parent component window. This is followed by <strong>sliderVolume.setBounds(0, 0, 200, 200)</strong>, which positions the child component relative to the origin (x<sub>c</sub> = 0 and y<sub>c</sub> = 0) and then scales the size to w<sub>c</sub> = 200 and h<sub>c</sub> = 200 pixels.   
+What we've done here is first, set the size of our parent component window and within the parent window, implement a volume slider. I have to note that Juce has a specific coordinate system that must be followed. In our current layout the origin (0,0) is located at the top left corner of our parent window, where the positive direction in y is down, while positive x is right. The function <strong>sliderVolume.setSize(200, 200)</strong> is setting h<sub>p</sub> and w<sub>p</sub>, the size of our parent component window. This is followed by <strong>sliderVolume.setBounds(0, 0, 200, 200)</strong>, which positions the child component relative to the origin (x<sub>c</sub> = 0 and y<sub>c</sub> = 0) and then scales the size to w<sub>c</sub> = 200 and h<sub>c</sub> = 200 pixels.   
 
 <figure>
 <img src = "/images/componentlayouts.png" alt ="images">
 </image>
 </figure>
 
-<strong>  Quick C++ Sidebar  </strong>
+<strong>  Another C++ Sidebar  </strong>
 
 If you're new to C++ you might be wondering what the "."" between the sliderVolume and the functions is for. It's called a <strong>member access operator</strong>. Because the sliderVolume is an object of the Slider class, you have access to the methods of the Slider class and many of the functions from the classes from which the Slider class inherits. A very thorough documentation of everything the Slider class has to offer can be found [here](https://www.juce.com/api/classSlider.html).
 
@@ -352,7 +346,7 @@ If you're new to C++ you might be wondering what the "."" between the sliderVolu
 
 <strong>  End C++ Sidebar  </strong>
 
-Next, we set the range of our slider using the <strong>setRange</strong> function. The function takes three variables: minimum value, the maximum value, and the interval. I chose 0.0, 1.0, and 0.01 to keep things simple. We also select the style of our slider using the <strong>setSliderStyle</strong> to <strong>Slider::RotaryHorizontalDrag</strong>, which is an <strong>enumerated type</strong>. An enumerated type is a data type that contains a certain number of elements. Here, we have access to certain slider types via the <strong>SliderStyle</strong> enumeration. There are other styles we can use such as Slider::LinearVertical, which creates a linear vertical type slider. A variety of different styles can be accessed by simply changing the Slider enumerated type. Again, check out the slider class documentation for my styles.
+Next, we set the range of our slider using the <strong>setRange</strong> function. The function takes three variables: minimum value, the maximum value, and the interval. I chose 0.0, 1.0, and 0.01 to keep things simple. We also select the style of our slider using the <strong>setSliderStyle</strong> to <strong>Slider::RotaryHorizontalDrag</strong>, which is an <strong>enumerated type</strong>. An enumerated type is a data type that contains a certain number of elements. Here, we have access to certain slider types via the <strong>SliderStyle</strong> enumeration. There are other styles we can use such as Slider::LinearVertical, which creates a linear vertical type slider. A variety of different styles can be accessed by simply changing the Slider enumerated type. Again, check out the slider class documentation for more styles.
 
 <figure>
 <img src = "/images/volumeslider.png" alt = "images" align="middle">
@@ -373,4 +367,4 @@ Finally, we make the sliderVolume component visible in the parent component wind
 </images>
 </figure>
 
-But wait, nothing happens when you turn the slider! That's because we haven't programmed the volume knob to changed the volume. Since this part took longer than I anticipated, I'll split it up into two sections. In the next part, we'll learn about listener classes and how we can set the volume slider to respond to user input.
+There's your volume knob! But wait, nothing happens when you turn the slider!? That's because we haven't programmed the volume knob to changed the volume. Since this part took longer than I anticipated, I'll split it up into two sections. In the next part, we'll learn about listener classes and how we can set the volume slider to respond to user input.
