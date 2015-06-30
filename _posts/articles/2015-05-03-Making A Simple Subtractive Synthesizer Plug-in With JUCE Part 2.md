@@ -90,7 +90,7 @@ The unfortunate reality of audio plugin programming is that you need to know a b
 The first concept I'm going to introduce are <strong>classes</strong>. According to [Wikipedia](http://en.wikipedia.org/wiki/C%2B%2B_classes): 
 
 <blockquote>
-A class is a user defined type or data structure declared with keyword class that has data and functions (also called methods) as its members whose access is governed by the three access specifiers private, protected or public (by default access to members of a class is privat>
+A class is a user defined type or data structure declared with keyword class that has data and functions (also called methods) as its members whose access is governed by the three access specifiers private, protected or public (by default access to members of a class is private)
 e). 
 </blockquote>
 
@@ -302,7 +302,7 @@ g.setFont (15.0f);
 g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
 {%endhighlight%}
 
-Then implement our slider in our constructor. 
+Then implement our slider in our constructor. The constructor is a special member function of a class that is executed whenever we create new objects of that class and has the exact same name as the class. The constuctor can be used to initialize the the values within our class. 
 
 {% highlight C++%}
 NeuroAudioProcessorEditor::NeuroAudioProcessorEditor (NeuroAudioProcessor& p)
@@ -330,6 +330,9 @@ NeuroAudioProcessorEditor::NeuroAudioProcessorEditor (NeuroAudioProcessor& p)
     
 }
 
+NeuroAudioProcessorEditor::~NeuroAudioProcessorEditor()
+{
+}
 {%endhighlight%}
 
 What we've done here is the following. We first set the size of our parent component window and within the parent window, we've implemented a volume slider. I have to note that Juce has a specific coordinate system that must be followed. In our current layout the origin (0,0) is located at the top left corner of our parent window, where the positive direction in y is down, while positive x is right. The function <strong>sliderVolume.setSize(200, 200)</strong> is setting h<sub>p</sub> and w<sub>p</sub>, the size of our parent component window. This is followed by <strong>sliderVolume.setBounds(0, 0, 200, 200)</strong>, which positions the child component relative to the origin (x<sub>c</sub> = 0 and y<sub>c</sub> = 0) and then scales the size to w<sub>c</sub> = 200 and h<sub>c</sub> = 200 pixels.   
