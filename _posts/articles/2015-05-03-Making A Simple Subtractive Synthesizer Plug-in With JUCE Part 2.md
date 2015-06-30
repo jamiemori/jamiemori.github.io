@@ -335,7 +335,7 @@ NeuroAudioProcessorEditor::NeuroAudioProcessorEditor (NeuroAudioProcessor& p)
 What we've done here is the following. We first set the size of our parent component window and within the parent window, we've implemented a volume slider. I have to note that Juce has a specific coordinate system that must be followed. In our current layout the origin (0,0) is located at the top left corner of our parent window, where the positive direction in y is down, while positive x is right. The function <strong>sliderVolume.setSize(200, 200)</strong> is setting h<sub>p</sub> and w<sub>p</sub>, the size of our parent component window. This is followed by <strong>sliderVolume.setBounds(0, 0, 200, 200)</strong>, which positions the child component relative to the origin (x<sub>c</sub> = 0 and y<sub>c</sub> = 0) and then scales the size to w<sub>c</sub> = 200 and h<sub>c</sub> = 200 pixels.   
 
 <figure>
-<img src = "/images/componentlayouts.png/" alt ="images">
+<img src = "/images/componentlayouts.png" alt ="images">
 </image>
 </figure>
 
