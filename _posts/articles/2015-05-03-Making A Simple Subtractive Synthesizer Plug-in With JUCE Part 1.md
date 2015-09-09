@@ -3,7 +3,7 @@ layout: page
 title: Making A Simple Subtractive Synthesizer Plugin With JUCE - Part 1
 excerpt: "Package installation and setup"
 categories: articles
-modified: 2015-05-03
+modified: 2015-08-11
 comments: true
 share: true
 ---

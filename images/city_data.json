@@ -1,0 +1,377 @@
+[
+    {
+        "Genre": "Rock", 
+        "Latitude": 33.5666666667, 
+        "Longitude": -86.75
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 30.6833333333, 
+        "Longitude": -88.25
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 33.4333333333, 
+        "Longitude": -112.0166666667
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 32.1166666667, 
+        "Longitude": -110.9333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 34.7333333333, 
+        "Longitude": -92.2333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 37.7, 
+        "Longitude": -121.95
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 33.8166666667, 
+        "Longitude": -118.15
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 34.05, 
+        "Longitude": -118.2333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 37.8166666667, 
+        "Longitude": -122.3166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 34.05, 
+        "Longitude": -117.6
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 33.8166666667, 
+        "Longitude": -116.5333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 38.5166666667, 
+        "Longitude": -121.5
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 32.7333333333, 
+        "Longitude": -117.1666666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 37.6166666667, 
+        "Longitude": -122.3833333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 37.3666666667, 
+        "Longitude": -121.9333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 36.9833333333, 
+        "Longitude": -122.0166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 38.8166666667, 
+        "Longitude": -104.7166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 39.75, 
+        "Longitude": -104.8666666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 41.7333333333, 
+        "Longitude": -72.65
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 39.6666666667, 
+        "Longitude": -75.6
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 38.85, 
+        "Longitude": -77.0333333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 25.8, 
+        "Longitude": -80.2666666667
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 28.55, 
+        "Longitude": -81.3833333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 27.9666666667, 
+        "Longitude": -82.5333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 33.65, 
+        "Longitude": -84.4333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 43.5666666667, 
+        "Longitude": -116.2166666667
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 41.7833333333, 
+        "Longitude": -87.75
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 39.7333333333, 
+        "Longitude": -86.2833333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 41.5333333333, 
+        "Longitude": -93.65
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 37.65, 
+        "Longitude": -97.4166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 38.1833333333, 
+        "Longitude": -85.7333333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 29.9833333333, 
+        "Longitude": -90.25
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 43.65, 
+        "Longitude": -70.3166666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 39.1833333333, 
+        "Longitude": -76.6666666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 42.3666666667, 
+        "Longitude": -71.0333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 42.2, 
+        "Longitude": -72.5333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 42.4166666667, 
+        "Longitude": -83.0166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 42.7833333333, 
+        "Longitude": -84.6
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 44.8833333333, 
+        "Longitude": -93.2166666667
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 32.3166666667, 
+        "Longitude": -90.0833333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 39.1166666667, 
+        "Longitude": -94.5833333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 38.75, 
+        "Longitude": -90.3833333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 45.8, 
+        "Longitude": -108.5333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 41.3, 
+        "Longitude": -95.9
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 36.0833333333, 
+        "Longitude": -115.1666666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 42.9333333333, 
+        "Longitude": -71.4333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 40.7, 
+        "Longitude": -74.1666666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 35.05, 
+        "Longitude": -106.6166666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 42.9333333333, 
+        "Longitude": -78.7333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 40.7833333333, 
+        "Longitude": -73.9666666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 35.2166666667, 
+        "Longitude": -80.9333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 35.8666666667, 
+        "Longitude": -78.7833333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 46.7666666667, 
+        "Longitude": -100.75
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 39.15, 
+        "Longitude": -84.5166666667
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 41.4, 
+        "Longitude": -81.85
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 40.0, 
+        "Longitude": -82.8833333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 35.4, 
+        "Longitude": -97.6
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 45.5333333333, 
+        "Longitude": -122.6666666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 39.8833333333, 
+        "Longitude": -75.25
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 40.5, 
+        "Longitude": -80.2166666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 41.7333333333, 
+        "Longitude": -71.4333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 33.95, 
+        "Longitude": -81.1166666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 43.5666666667, 
+        "Longitude": -96.7333333333
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 35.05, 
+        "Longitude": -90.0
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 36.1166666667, 
+        "Longitude": -86.6833333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 30.3, 
+        "Longitude": -97.7
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 32.85, 
+        "Longitude": -96.85
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 29.9666666667, 
+        "Longitude": -95.35
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 29.5333333333, 
+        "Longitude": -98.4666666667
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 40.7666666667, 
+        "Longitude": -111.9666666667
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 44.4666666667, 
+        "Longitude": -73.15
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 37.5, 
+        "Longitude": -77.3333333333
+    }, 
+    {
+        "Genre": "Rock", 
+        "Latitude": 47.5333333333, 
+        "Longitude": -122.3
+    }, 
+    {
+        "Genre": "Reggae", 
+        "Latitude": 43.1333333333, 
+        "Longitude": -89.3333333333
+    }, 
+    {
+        "Genre": "House", 
+        "Latitude": 41.15, 
+        "Longitude": -104.8166666667
+    }
+]
