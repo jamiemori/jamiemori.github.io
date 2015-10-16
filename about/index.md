@@ -15,13 +15,14 @@ He also makes [music](https://soundcloud.com/japaradise) and writes code under t
 #Skills
 
 * Expert in Python, Proficient in: C++
-* HTML, Flask, CSS, d3.js, Vim, Latex, Git, and Labview
+* Flask, PostgreSQL, HTML, CSS, d3.js, Vim, Latex, Git, and Labview
 * Thin film expert
-* Languages: English (Native Proficiency), Japanese (Business Proficiency)
+* Languages: English (Native Proficiency), Japanese (Native Proficiency)
 
 # Projects
 
 * Laugh Engine (comedy analysis pipeline)
+* Open Worm
 * Riser (software synthesizer)
 
 # Academic Background
