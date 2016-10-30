@@ -28,7 +28,7 @@ This post is based on a journal article that I read by Jonathan Foote called "Au
 # Raw audio
 I'm going to be analyzing two songs, "One More Time" by Daft Punk and "Paradise Circus" by Massive Attack. One More Time is about 5 minutes 20 seconds whereas Paradise Circus is roughly 4 minute 57 seconds. Here are the raw audio waveforms for both songs. I'm using [wavesurfer.js](http://www.wavesurfer-js.org) to visualize the audio.
 
-###Daft Punk - One More Time
+### Daft Punk - One More Time
 <div class="wave-container sound" id="wave">
 </div>
 <a id="playdaft" style="cursor: pointer;" class="btn">Play/Pause</a>
@@ -36,7 +36,7 @@ I'm going to be analyzing two songs, "One More Time" by Daft Punk and "Paradise 
 
 One more time in typical daft punk fashion is quite mechanical and repetitive. It samples an Eddie Johns track called "More Spell on You" and also features vocals by Romanthony, which have been heavily vocoded. Instrumentally, the song consists mainly of the Eddie Johns sample, the kick drum, hats, snare, and an organ sounding instrument during the interlude. The instrumental loops run repetitively throughout the entire song with minimal modulation. The structure of the song arises mainly from variations in volume and the level of filter applied. This is not surprising since Daft Punk is categorized under "French House," which is sometimes called "Filter House" due to its heavy reliance on filtering and phaser effects.
 
-###Massive Attack - Paradise Circus
+### Massive Attack - Paradise Circus
 <div class="wave-container sound" id="wave2">
 </div>
 <a id="playmassive" style="cursor: pointer;" class="btn">Play/Pause</a>
@@ -77,7 +77,7 @@ Collectively, the mfc of all the frequency bands is called the mfcc.
 
 We have transformed the raw audio into a spectrogram and the mfcc which both represent, in slightly different ways, how the frequencies of the sound evolve as a function of time. Now we want to establish a relation between each frame i.e., how does the amplitude of frequency x at time y relate to amplitude of frequency q at time r? One way to do this is by creating a similarity matrix. The matrix is a parameterization of how "similar" two variables are, where in our case the variables are the intensities of spectrogram/mfcc at a specific frequency and time. The measure of similarity between the variables is determined by calculating a distance metric. Common distance metrics are euclidean, cosine, and Manhattan. Here we use the correlation coefficient $$P_{ij}$$:
 
-$$ 
+$$
 P_{ij} = \frac{C_{ij}}{\sqrt{C_{ii}*C_{jj}}}
 $$
 
@@ -97,7 +97,7 @@ def similarityMatrix(input_spectrogram):
     sm = np.corrcoef(X)
 
     return sm    
-   
+
 # script for plotting 
 pcolormesh(frm_time, frm_time, sm, cmap='RdBu')
 plt.colorbar()
@@ -344,7 +344,3 @@ It's definitely not perfect, but it's not horrible either. In One More Time, the
 
 # Conclusion
 So we saw that the filter does an okay job. Yes, the filter isn't made to extract "significance" from each section of the song. It definitely doesn't understand the words, thus it doesn't actually understand verse-chorus form. It also doesn't really understand what melody or harmony is, it's just calculating correlations between audio frames. But in the end, it seems like a more sophisticated method of segmentation over volume segmentation or rhythm. Performance wise, it's fairly quick and the beauty is that it doesn't require a prior training step or a labeled dataset. There are definitely flaws, thresholding and filter size are two obvious ones. In any case, you can further organize the segments with clustering, which the authors do in a subsequent paper, adding sophistication to the model.
-
-
-
-
