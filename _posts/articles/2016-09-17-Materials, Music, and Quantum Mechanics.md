@@ -9,7 +9,7 @@ share: true
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.js></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.js'></script>
 
 
 $$f(\vec{x}) = \sum_{\vec{n}\in\infty}\delta(\vec{x} - \vec{x}_{\vec{n}})$$

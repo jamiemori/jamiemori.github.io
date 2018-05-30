@@ -330,12 +330,12 @@ df1.to_json('paradise.json', orient='records')
 
 The rest is basically writing some javascript code to read the json file and loading the regions into wavesurfer. My javascript skills aren't great, but I was able to do it after some struggling. Here are the results! How well does the algorithm perform?
 
-###Daft Punk - One More Time
+### Daft Punk - One More Time
 <div class="wave-container sound" id="wave3">
 </div>
 <a id="playdaft2" style="cursor: pointer;" class="btn">Play/Pause</a>
 
-###Massive Attack - Paradise Circus
+### Massive Attack - Paradise Circus
 <div class="wave-container sound" id="wave4">
 </div>
 <a id="playmassive2" style="cursor: pointer;" class="btn">Play/Pause</a>

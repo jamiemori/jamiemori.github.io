@@ -12,7 +12,7 @@ His current research interests include machine learning, data, music production,
 
 He also makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
 
-#Skills
+# Skills
 
 * Expert in Python, Proficient in: C++
 * Hive, Spark, Hadoop ecosystem, Flask, PostgreSQL, HTML, CSS, d3.js, Vim, Latex, Git, and Labview
