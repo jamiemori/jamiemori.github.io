@@ -8,18 +8,18 @@ modified: 2014-08-08T19:44:38.564948-04:00
 
 Taro A. Naoi is currently a data engineer.
 
-Prior to data engineering, he was a Ph.D candidate at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure of amorphous thin films using high energy x-ray diffraction and absorption methods. He applies his knowlege of materials science, physics, and programming to tackle various problems spanning from computational materials to audio classification systems.
+Prior to data engineering, he was a data science fellow at Insight Data Science in NYC where he worked on Humor Me, a comedian recommendation platform. Also at one point, he was a Ph.D candidate at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure of amorphous thin films using high energy x-ray diffraction and absorption methods. He applies his knowlege of materials science, physics, and programming to tackle various problems spanning from computational materials to audio classification systems.
 
-His current interests include amorphous materials, music production, audio physics, machine learning, and building scalable data pipelines.
+His current interests include amorphous materials, music production, audio physics, machine learning, statistics, probabilistic programming, and building scalable data pipelines.
 
-He also makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
+He also (triest to)makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
 
 # Skills
 
-* Expert in Python, Proficient in: C++
-* Packages and Frameworks - Pandas, Tensorflow, Scipy, Numpy, Pymc3, Scikit, Librosa, Scrapy, Flask, Jupyter Notebook, Airflow, Bokeh, HTML, CSS, D3.js, React.js, Javascript, LaTeX, Git, Vim, Postgresql
-* Ecosystems - Google Cloud Computing (App Engine, Cloud Storage, Cloud Sql, Dataflow, Cloud Endpoints, Cloud ML, Kubernetes Engine), AWS (EC2, S3, RDS), Hadoop (Hdfs, Hive, Spark)
-* Thin film expert
+* Expert in Python, proficient in C++
+* <strong>Packages and Frameworks</strong>: Pandas, Tensorflow, Scipy, Numpy, Pymc3, Scikit, Librosa, Scrapy, Flask, Jupyter Notebook, Airflow, Bokeh, HTML, CSS, D3.js, React.js, Javascript, LaTeX, Git, Vim, Postgresql
+* <strong>Ecosystems</strong>: Google Cloud Computing (App Engine, Cloud Storage, Cloud Sql, Dataflow, Cloud Endpoints, Cloud ML, Kubernetes Engine), AWS (EC2, S3, RDS), Hadoop (Hdfs, Hive, Spark)
+* Thin film expert, clean room ready
 * Languages: English (Native Proficiency), Japanese (Native Proficiency)
 
 # Projects
@@ -47,7 +47,7 @@ He also makes [music](https://soundcloud.com/japaradise) and writes code under t
 
 * T.A. Naoi, R. B. van Dover “Relation Between Dielectric Properties and Structure in Complex Amorphous and Crystalline Thin Film Oxides”, in preparation, 2015.
 
-* T.A. Naoi, R. B. van Dover “Dielectric Properties of Mixed Amorphous TaGeO and TaSiO Thin Films”, in preparation, 2015.
+* T.A. Naoi, R. B. van Dover “Dielectric Properties of Mixed Amorphous TaGeO and TaSiO Thin Films”, Journal of Applied Physics, Accepted (2018)
 
 * T. A. Naoi, H. Paik, M. L. Green, R. B. van Dover "Dielectric properties of amorphous Zr-Al-O and Zr-Si-O thin films", Journal of Advanced Dielectrics, 5, 1550010, (2015).
 

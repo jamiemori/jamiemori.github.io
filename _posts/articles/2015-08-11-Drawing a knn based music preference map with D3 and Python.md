@@ -122,7 +122,6 @@ Now, our task is to estimate the musical preferences of ALL counties in the US b
 Before we can analyze the data, we have to clean the data since it's a little messy; we have to munge the data. Data munging (wrangling) is a task where we take our "raw" data set and convert it to a format that is more amenable to data analysis. We first go to the directory in which the <strong>city-data.txt</strong> file is contained and then start our Ipython environment. Our text file is read into the notebook using the <strong>with open</strong> command. The <strong>with open</strong> idiom ensures that the file closes once the file is read, regardless of if an exception occurs or not. We then remove some regular expression characters such as \n (new line), parantheses, single quotes, and split the data at the commas. 
 
 {% highlight Python %} 
-
 In [1]:
 import re
 import string
@@ -418,7 +417,7 @@ counties_data.to_csv('counties_data.csv')
 
 {% endhighlight %} 
 
-#Making a Map in d3.js
+# Making a Map in d3.js
 
 Now that we're done with the analysis, let's jump right into the visualization. If you get stuck a good place to refer to about map creation in d3 is [here](http://bost.ocks.org/mike/map/). 
 
@@ -437,7 +436,6 @@ The Albers USA projection is a composite projection of four Albers projections d
 Once the projection is specified we scale it, translate it, and generate the path. 
 
 {% highlight html %} 
-
 <!DOCTYPE html>
 
 <head>
@@ -500,7 +498,6 @@ After the files are downloaded the <strong>ready</strong> function will execute 
 
 
 Now, let's add some CSS styling. 
-
 {% highlight html %} 
 <style>
     .state-borders { fill:none; stroke: #000; stroke-width: 0.5; }
@@ -521,7 +518,6 @@ So far the map should look something like this. Nifty.
 But wait, there's more. In addition to highlighting the counties, it would be more illuminating to see the musical genre preferences of the sampled cities. This way you can tell how well the knn performed at estimating the preferences. Let's add a little bit more code right after the part where we draw the state boundaries. The code should be pretty straightforward. We're basically appending circles to the svg and placing them on the map according to the Longitude and Latitude data contained in the city_data.json file. We have to use projection since again, we're projecting spherical coordinates to cartesian planes. The rest is all styling. We set the radius of the circles, define their stroke paths, and fill the circles with the appropriate color according to the genre. The last part is done using a simple if/else statement.
 
 {% highlight html %} 
-
 <script>
     d3.json("city_data.json", function(data) {
     svg.selectAll("circle")
