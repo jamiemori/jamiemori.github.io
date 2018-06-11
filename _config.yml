@@ -5,8 +5,8 @@ locale: en_US
 #description: 
 logo: site-logo.png
 search: true
-#url: http://jamiemori.github.io/
-url: http://localhost:4000
+url: http://jamiemori.github.io/
+#url: http://localhost:4000
 
 # Jekyll configuration
 permalink:   /:categories/:title/
