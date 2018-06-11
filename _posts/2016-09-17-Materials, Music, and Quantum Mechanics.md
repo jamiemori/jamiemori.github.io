@@ -143,7 +143,4 @@ $$
 \langle p \rvert x \rangle = \frac{1}{\sqrt{2\pi\hbar}} \int e^{\frac{-ipx}{\hbar}} dx
 $$
 
-
-
-
 #Conclusion
