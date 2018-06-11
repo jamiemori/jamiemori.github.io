@@ -119,7 +119,7 @@ Now, our task is to estimate the musical preferences of ALL counties in the US b
 
 # Data Munging 
 
-Before we can analyze the data, we have to clean the data since it's a little messy; we have to munge the data. Data munging (wrangling) is a task where we take our "raw" data set and convert it to a format that is more amenable to data analysis. We first go to the directory in which the <strong>city-data.txt</strong> file is contained and then start our Ipython environment. Our text file is read into the notebook using the <strong>with open</strong> command. The <strong>with open</strong> idiom ensures that the file closes once the file is read, regardless of if an exception occurs or not. We then remove some regular expression characters such as \n (new line), parantheses, single quotes, and split the data at the commas. 
+Before we can analyze the data, we have to clean the data since it's a little messy. Data munging (wrangling) is a task where we take our "raw" data set and convert it to a format that is more amenable to data analysis. We first go to the directory in which the <strong>city-data.txt</strong> file is contained and then start our Ipython environment. Our text file is read into the notebook using the <strong>with open</strong> command. The <strong>with open</strong> idiom ensures that the file closes once the file is read, regardless of if an exception occurs or not. We then remove some regular expression characters such as \n (new line), parantheses, single quotes, and split the data at the commas. 
 {% highlight Python %} 
 In [1]:
 import re
@@ -486,7 +486,7 @@ function ready(error, us) {
 </html> 
 {% endhighlight %} 
 
-To create the highlighting effect for the counties we need to tell d3 which FIPS code belongs to which musical genre so that the CSS styling can be applied accordingly. Therefore, we need to map the FIPS code with the respective genres. We do this using the <strong>.map()</strong> function. We also need to quantize the color scale using d3's ordinal scale. Ordinal scales are good for mapping inputs to discrete output domains like names and categories, which is perfect for color coding musical genres. When this is done correctly, we can <em>hypothetically</em> open the browser console and type in for example quantize( rateByFIPS.get(1001)), which should return "Rock," as the FIPS code 1001 should be associated with the genre Rock via our analysis.
+To create the highlighting effect for the counties we need to tell d3 which FIPS code belongs to which musical genre so that the CSS styling can be applied accordingly. Therefore, we need to map the FIPS code with the respective genres. We do this using the <strong>.map()</strong> function. We also need to quantize the color scale using d3's ordinal scale. Ordinal scales are good for mapping inputs to discrete output domains like names and categories, which is perfect for color coding musical genres. When this is done correctly, we can hypothetically open the browser console and type in for example quantize( rateByFIPS.get(1001)), which should return "Rock," as the FIPS code 1001 should be associated with the genre Rock via our analysis.
 
 At this point however, nothing will work because we haven't told the rateByFIPS object to map the FIPS codes to the Genres. Furthermore, we have to asynchronously download the us.json and counties_data.csv file to our browser before the actual map can be rendered. We do this by using the <strong>queue()</strong> function and defer rendering the map until the files are loaded. It is here when we also set (map) the FIPS codes to the genres.  
 
@@ -507,7 +507,7 @@ Now, let's add some CSS styling.
 </style>
 {% endhighlight %} 
 
-So far the map should look something like this. Nifty.
+So far the map should look something like this.
 
 <img src="../../images/knn_map1.png">
 
@@ -549,8 +549,3 @@ Now the map should look like this, gnarly!
 # Conclusion
 
 So there you have it, a knn based music preference map. Of course, this is a very simplistic model applied to an imaginary problem. A drawback of the model is that the knn classifier fails to elucidate the causality of the preference and doesn't "learn" from the data. It is also sensitive to class distribution and skew. However, it is a straightforward, hence a good model to use for drawing the preference map in d3.
-
-[Listen to some Hiromi as reward for your dedication!](https://www.youtube.com/watch?v=SzBOE6RaulA&list=FLYifd_pd2jXEJaLQngzyjAw&index=28)
-
-
-
