@@ -6,23 +6,26 @@ modified: 2014-08-08T19:44:38.564948-04:00
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
 
-Taro A. Naoi is currently a Ph.D candidate (graduation imminent) at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure of amorphous thin films using high energy x-ray diffraction methods. He applies his knowlege of materials science and physics to tackle various problems spanning from computational materials, to programming audio classification systems.
+Taro A. Naoi is currently a data engineer.
 
-His current research interests include amorphous materials, music production, audio physics, machine learning, and programming. 
+Prior to data engineering, he was a Ph.D candidate at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure of amorphous thin films using high energy x-ray diffraction and absorption methods. He applies his knowlege of materials science, physics, and programming to tackle various problems spanning from computational materials to audio classification systems.
+
+His current interests include amorphous materials, music production, audio physics, machine learning, and building scalable data pipelines.
 
 He also makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
 
-#Skills
+# Skills
 
 * Expert in Python, Proficient in: C++
-* Flask, PostgreSQL, HTML, CSS, d3.js, Vim, Latex, Git, and Labview
+* Packages and Frameworks - Pandas, Tensorflow, Scipy, Numpy, Pymc3, Scikit, Librosa, Scrapy, Flask, Jupyter Notebook, Airflow, Bokeh, HTML, CSS, D3.js, React.js, Javascript, LaTeX, Git, Vim, Postgresql
+* Ecosystems - Google Cloud Computing (App Engine, Cloud Storage, Cloud Sql, Dataflow, Cloud Endpoints, Cloud ML, Kubernetes Engine), AWS (EC2, S3, RDS), Hadoop (Hdfs, Hive, Spark)
 * Thin film expert
 * Languages: English (Native Proficiency), Japanese (Native Proficiency)
 
 # Projects
 
-* Laugh Engine (comedy analysis pipeline)
-* Open Worm
+* Admix (talent analysis pipeline)
+* Open Worm (ex-contributor)
 * Riser (software synthesizer)
 
 # Academic Background
