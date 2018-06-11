@@ -34,14 +34,14 @@ I'm going to be analyzing two songs, "One More Time" by Daft Punk and "Paradise 
 <a id="playdaft" style="cursor: pointer;" class="btn">Play/Pause</a>
 
 
-One more time in typical daft punk fashion is quite mechanical and repetitive. It samples an Eddie Johns track called "More Spell on You" and also features vocals by Romanthony, which have been heavily vocoded. Instrumentally, the song consists mainly of the Eddie Johns sample, the kick drum, hats, snare, and an organ sounding instrument during the interlude. The instrumental loops run repetitively throughout the entire song with minimal modulation. The structure of the song arises mainly from variations in volume and the level of filter applied. This is not surprising since Daft Punk is categorized under "French House," which is sometimes called "Filter House" due to its heavy reliance on filtering and phaser effects.
+One more time in typical daft punk fashion is quite mechanical and repetitive. It samples an Eddie Johns track called "More Spell on You" and also features vocals by Romanthony, which has been heavily vocoded. Instrumentally, the song consists mainly of the Eddie Johns sample, the kick drum, hats, snare, and an organ sounding instrument during the interlude. The instrumental loops run repetitively throughout the entire song with minimal modulation. The structure of the song arises mainly from variations in volume and the level of filter applied. This is not surprising since Daft Punk is categorized under "French House," which is sometimes called "Filter House" due to its heavy reliance on filtering and phaser effects.
 
 ### Massive Attack - Paradise Circus
 <div class="wave-container sound" id="wave2">
 </div>
 <a id="playmassive" style="cursor: pointer;" class="btn">Play/Pause</a>
 
-Paradise Circus is a fairly minimal track. It features the haunting vocals of Hope Sandoval, who by the way is/was? the lead singer of Mazzy Star (remember "Fade Into You?"). The melody consists mostly of the xylophone and Hope's vocals. The instrumentals sound organic and lush with drum kits, layered claps, finger snaps, and the bass dictating the rhythmic. In addition, the track is intermittently peppered with synthetic noises. Towards the of the song there is an intense crescendo of piano and strings, finally fading out with large amounts of reverberation.
+Paradise Circus is a fairly minimal track. It features the haunting vocals of Hope Sandoval, who by the way is/was? the lead singer of Mazzy Star (remember "Fade Into You?"). The melody consists mostly of the xylophone and Hope's vocals. The instrumentals sound organic and lush with drum kits, layered claps, finger snaps, and the bass dictating the rhythm. In addition, the track is intermittently peppered with synthetic noises. Towards the end of the song there is an intense crescendo of piano and strings, finally fading out with large amounts of reverberation.
 
 <script>
 </script>
@@ -75,7 +75,7 @@ Collectively, the mfc of all the frequency bands is called the mfcc.
 
 # Similarity matrix
 
-We have transformed the raw audio into a spectrogram and the mfcc which both represent, in slightly different ways, how the frequencies of the sound evolve as a function of time. Now we want to establish a relation between each frame i.e., how does the amplitude of frequency x at time y relate to amplitude of frequency q at time r? One way to do this is by creating a similarity matrix. The matrix is a parameterization of how "similar" two variables are, where in our case the variables are the intensities of spectrogram/mfcc at a specific frequency and time. The measure of similarity between the variables is determined by calculating a distance metric. Common distance metrics are euclidean, cosine, and Manhattan. Here we use the correlation coefficient $$P_{ij}$$:
+We have transformed the raw audio into a spectrogram and the mfcc which both represent, in slightly different ways, how the frequencies of the sound evolve as a function of time. Now we want to establish a relation between each frame i.e., how the amplitude of frequency x at time y relate to amplitude of frequency q at time r One way to do this is by creating a similarity matrix. The matrix is a parameterization of how "similar" two variables are, where in our case the variables are the intensities of spectrogram/mfcc at a specific frequency and time. The measure of similarity between the variables is determined by calculating a distance metric. Common distance metrics are euclidean, cosine, and Manhattan. Here we use the correlation coefficient $$P_{ij}$$:
 
 $$
 P_{ij} = \frac{C_{ij}}{\sqrt{C_{ii}*C_{jj}}}
@@ -252,7 +252,7 @@ plt.legend()
 plt.show()
 {% endhighlight %} 
 
-The code takes into account of the fact that the kernel does not perfectly overlap the similarity matrix when we first begin sliding the kernel over the matrix. Below are the calculated novelty scores plotted over the raw audio waveforms:
+The code takes into account the fact that the kernel does not perfectly overlap the similarity matrix when we first begin sliding the kernel over the matrix. Below are the calculated novelty scores plotted over the raw audio waveforms:
 
 #### One More Time Novelty 
 <img src="../../images/daft_novelty.png">
@@ -336,4 +336,4 @@ The rest is basically writing some javascript code to read the json file and loa
 It's definitely not perfect, but it's not horrible either. In One More Time, the filter seems to be segmenting along large changes in volume and is moderately successful in picking up variations in harmonic progression. The filter probably does a decent job segmenting along harmonic progressions since the song is so repetitive and has a very solid harmonic structure. I'm surprised that it didn't pick up the "drop" at 4:18, but that is likely due to the size of the filter. On the other hand, in Paradise Circus the filter seems to mostly be segmenting along vocal utterances. This is probably because the song is so minimal and that the vocalist occupies a large portion of the overall mix, so the filter has an easier time picking up the subtle changes in utterance. Towards the end, the filter also picks up changes in instrumentation, from piano to strings.
 
 # Conclusion
-So we saw that the filter does an okay job. Yes, the filter isn't made to extract "significance" from each section of the song. It definitely doesn't understand the words, thus it doesn't actually understand verse-chorus form. It also doesn't really understand what melody or harmony is, it's just calculating correlations between audio frames. But in the end, it seems like a more sophisticated method of segmentation over volume segmentation or rhythm. Performance wise, it's fairly quick and the beauty is that it doesn't require a prior training step or a labeled dataset. There are definitely flaws, thresholding and filter size are two obvious ones. In any case, you can further organize the segments with clustering, which the authors do in a subsequent paper, adding sophistication to the model.
+So we saw that the filter does an okay job. Yes, the filter isn't made to extract "significance" from each section of the song. It definitely doesn't understand the words, thus it doesn't actually understand verse-chorus form. It also doesn't really understand melody or harmony, it's just calculating correlations between audio frames. But in the end, it seems like a more sophisticated method of segmentation over simply volume or rhythm segmentation. Performance wise, it's fairly quick and the beauty is that it doesn't require a prior training step or a labeled dataset. There are definitely flaws: thresholding and filter size are two obvious ones. In any case, you can further organize the segments with clustering, which the authors do in a subsequent paper, adding sophistication to the model.
