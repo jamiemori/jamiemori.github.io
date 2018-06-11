@@ -6,23 +6,23 @@ modified: 2014-08-08T19:44:38.564948-04:00
 ---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
 
-Taro A. Naoi is currently a Ph.D candidate (graduation imminent) at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure of amorphous thin films using high energy x-ray diffraction methods. He applies his knowlege of materials science and physics to tackle various problems spanning from computational materials, to programming audio classification systems.
+Taro A. Naoi is currently working at NBC-Universal as a Senior Data Engineering Developer working on building ETL and analysis pipelines with Python. Previously he was at Cornell University in the [Materials Science and Engineering Department](http://www.mse.cornell.edu/), studying the structure and electronic properties of complex amorphous thin films.
 
-His current research interests include amorphous materials, music production, audio physics, machine learning, and programming. 
+His current research interests include machine learning, data, music production, audio physics, and programming. 
 
 He also makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
 
-#Skills
+# Skills
 
 * Expert in Python, Proficient in: C++
-* Flask, PostgreSQL, HTML, CSS, d3.js, Vim, Latex, Git, and Labview
+* Hive, Spark, Hadoop ecosystem, Flask, PostgreSQL, HTML, CSS, d3.js, Vim, Latex, Git, and Labview
 * Thin film expert
 * Languages: English (Native Proficiency), Japanese (Native Proficiency)
 
 # Projects
 
-* Laugh Engine (comedy analysis pipeline)
-* Open Worm
+* Humor Me (comedy analysis startup)
+* Open Worm (on-hold)
 * Riser (software synthesizer)
 
 # Academic Background
