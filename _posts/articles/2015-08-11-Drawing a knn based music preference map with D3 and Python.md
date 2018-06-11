@@ -120,7 +120,6 @@ Now, our task is to estimate the musical preferences of ALL counties in the US b
 # Data Munging 
 
 Before we can analyze the data, we have to clean the data since it's a little messy; we have to munge the data. Data munging (wrangling) is a task where we take our "raw" data set and convert it to a format that is more amenable to data analysis. We first go to the directory in which the <strong>city-data.txt</strong> file is contained and then start our Ipython environment. Our text file is read into the notebook using the <strong>with open</strong> command. The <strong>with open</strong> idiom ensures that the file closes once the file is read, regardless of if an exception occurs or not. We then remove some regular expression characters such as \n (new line), parantheses, single quotes, and split the data at the commas. 
-
 {% highlight Python %} 
 In [1]:
 import re
@@ -141,7 +140,6 @@ Out[1]:
  ['-112.016666666667', '33.4333333333333', 'Java', ''],
  ['-110.933333333333', '32.1166666666667', 'Java', ''],
  ['-92.2333333333333', '34.7333333333333', 'R', '']]
-
 {% endhighlight %} 
 
 The result is a list of strings with the first two elements of each list being the longitude and the latitude and the third being a programming language of preference. We want to clean the data further and create a pandas data frame for intuitive data manipulation. Let's convert the string data into floats so that we can actually manipulate them as floating point numbers; we use list comprehension for this task.  We then create a pandas dataframe with three columns. The <strong>.head()</strong> function reveals the first five elements of the dataframe. Notice that I've used "Genre" instead of "preferred language." This is done in anticipation of the following step.
@@ -434,7 +432,6 @@ The Albers USA projection is a composite projection of four Albers projections d
 </blockquote>
 
 Once the projection is specified we scale it, translate it, and generate the path. 
-
 {% highlight html %} 
 <!DOCTYPE html>
 
@@ -487,7 +484,6 @@ function ready(error, us) {
 </script>
 </body>
 </html> 
-
 {% endhighlight %} 
 
 To create the highlighting effect for the counties we need to tell d3 which FIPS code belongs to which musical genre so that the CSS styling can be applied accordingly. Therefore, we need to map the FIPS code with the respective genres. We do this using the <strong>.map()</strong> function. We also need to quantize the color scale using d3's ordinal scale. Ordinal scales are good for mapping inputs to discrete output domains like names and categories, which is perfect for color coding musical genres. When this is done correctly, we can <em>hypothetically</em> open the browser console and type in for example quantize( rateByFIPS.get(1001)), which should return "Rock," as the FIPS code 1001 should be associated with the genre Rock via our analysis.
@@ -516,7 +512,6 @@ So far the map should look something like this. Nifty.
 <img src="../../images/knn_map1.png">
 
 But wait, there's more. In addition to highlighting the counties, it would be more illuminating to see the musical genre preferences of the sampled cities. This way you can tell how well the knn performed at estimating the preferences. Let's add a little bit more code right after the part where we draw the state boundaries. The code should be pretty straightforward. We're basically appending circles to the svg and placing them on the map according to the Longitude and Latitude data contained in the city_data.json file. We have to use projection since again, we're projecting spherical coordinates to cartesian planes. The rest is all styling. We set the radius of the circles, define their stroke paths, and fill the circles with the appropriate color according to the genre. The last part is done using a simple if/else statement.
-
 {% highlight html %} 
 <script>
     d3.json("city_data.json", function(data) {
@@ -545,7 +540,6 @@ But wait, there's more. In addition to highlighting the counties, it would be mo
     });
 };
 </script>
-
 {% endhighlight %} 
 
 Now the map should look like this, gnarly!

@@ -183,7 +183,6 @@ def gaussianKernel(size, kernel_size_y=None):
 {% endhighlight %}
 
 We can generate the Gaussian checkerboard kernel by taking the Haddamard of the Gaussian and checkerboard kernels.
-
 {% highlight Python %} 
 def gaussianCheckerBoardKernel(kernel_size):
     """
@@ -207,9 +206,7 @@ N(i) = \sum_{m = -L/2}^{L/2} \sum_{n = -L/2}^{L/2} C(m,n)S(i+m, i+n)
 $$
 
 The code to do this is: 
-
 {% highlight Python %} 
-
 def kernelCorrelation(similarity_matrix, kernel):
     """
     Determines the kernel correlation across the diagonal of
@@ -266,9 +263,7 @@ The code takes into account of the fact that the kernel does not perfectly overl
 Having calculated the novelties, we have to segment the songs along areas of high novelty. For this we first have to locate the peaks in the novelty. You'll notice though, that there are a lot of peaks. This is the another weakness of this techniques, which is that you have to choose a cutoff threshold for the novelty when choosing where to segment the song along points of high novelty. Just looking at the peaks and the structure of the songs, 0.5 seems to be a reasonable threshold for the normalized novelty.
 
 To draw the segments using wavesurfer.regions we have to create a json file with the start and finish times of each segment. We therefore have to determine the locations of the peaks with the condition that the normalized novelty measure doesn't exceed 0.5. We do this with the following code: 
-
 {% highlight Python %} 
-
 # normalize the novelty to maximum of 1
 normalize1D(novelty)
 
@@ -289,9 +284,7 @@ p = [p[0] for p in p if p[1] > 50]
 {% endhighlight %} 
 
 We then have to calculate the start and end times for each segment. This is done mostly through list manipulation as well as using pandas to save the json file: 
-
 {% highlight Python %} 
-
 import pandas as pd
 
 # p contains the indices for each peak, hence
