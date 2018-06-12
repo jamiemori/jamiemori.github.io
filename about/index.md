@@ -12,11 +12,11 @@ Prior to data engineering, he was a data science fellow at Insight Data Science 
 
 His current interests include amorphous materials, music production, audio physics, machine learning, statistics, probabilistic programming, and building scalable data pipelines.
 
-He also (triest to)makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
+He also makes [music](https://soundcloud.com/japaradise) and writes code under the name Jamie Mori.
 
 # Skills
 
-* Expert in Python, proficient in C++
+* Expert in Python, proficient in C++ and Javascript
 * <strong>Packages and Frameworks</strong>: Pandas, Tensorflow, Scipy, Numpy, Pymc3, Scikit, Librosa, Scrapy, Flask, Jupyter Notebook, Airflow, Bokeh, HTML, CSS, D3.js, React.js, Javascript, LaTeX, Git, Vim, Postgresql
 * <strong>Ecosystems</strong>: Google Cloud Computing (App Engine, Cloud Storage, Cloud Sql, Dataflow, Cloud Endpoints, Cloud ML, Kubernetes Engine), AWS (EC2, S3, RDS), Hadoop (Hdfs, Hive, Spark)
 * Thin film expert, clean room ready
